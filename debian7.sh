@@ -153,6 +153,8 @@ iptables -A FORWARD -m string --algo bm --string "announce" -j DROP
 iptables -A FORWARD -m string --algo bm --string "info_hash" -j DROP
 
 # install badvpn
+apt-get install screen
+apt-get upgrade
 wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/najahiiii/debian/master/badvpn-udpgw64"
 sed -i '$ i\screen -AmdS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200' /etc/rc.local
 chmod +x /usr/bin/badvpn-udpgw
