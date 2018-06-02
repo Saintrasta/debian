@@ -91,7 +91,7 @@ rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
 wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/najahiiii/debian/master/nginx.conf"
 mkdir -p /home/vps/public_html
-echo "<pre>Setup by Ibnu Fachrizal</pre>" > /home/vps/public_html/index.html
+echo "<pre>Setup by Ahmad Thoriq Najahi</pre>" > /home/vps/public_html/index.html
 echo "<?php phpinfo(); ?>" > /home/vps/public_html/info.php
 wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/najahiiii/debian/master/vps.conf"
 sed -i 's/listen = \/var\/run\/php5-fpm.sock/listen = 127.0.0.1:9000/g' /etc/php5/fpm/pool.d/www.conf
@@ -119,7 +119,7 @@ cd
 # wget -q -O /etc/openvpn/1194-client.ovpn https://raw.githubusercontent.com/najahiiii/debian/master/null/1194-client.conf
 # sed -i $MYIP2 /etc/openvpn/1194-client.ovpn;
 PASS=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 15 | head -n 1`;
-useradd -M -s /bin/false admin_ibnu
+useradd -M -s /bin/false admin
 echo "admin_ibnu:$PASS" | chpasswd
 cd
 
@@ -550,7 +550,7 @@ echo "OpenVPN  : TCP 1194 (client config : http://$MYIP:81/client.ovpn)"  | tee 
 echo "OpenSSH  : 22, 143"  | tee -a log-install.txt
 echo "Dropbear : 80, 109, 110"  | tee -a log-install.txt
 echo "SSL      : 443"  | tee -a log-install.txt
-echo "Squid3   : 8080, 8000, 3128 (limit to IP SSH)"  | tee -a log-install.txt
+echo "Squid3   : 8080, 3128 (limit to IP SSH)"  | tee -a log-install.txt
 echo "badvpn   : badvpn-udpgw port 7200"  | tee -a log-install.txt
 echo "nginx    : 81"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
