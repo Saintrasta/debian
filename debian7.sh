@@ -25,9 +25,6 @@ OS=`uname -m`;
 MYIP=`ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0'`;
 MYIP2="s/xxxxxxxxx/$MYIP/g";
 
-# disable ipv6
-echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
-sed -i '$ i\echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6' /etc/rc.local
 
 # install wget and curl
 apt-get update
@@ -155,7 +152,7 @@ iptables -A FORWARD -m string --algo bm --string "info_hash" -j DROP
 # install badvpn
 apt-get install screen
 apt-get upgrade
-wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/najahiiii/debian/master/badvpn-udpgw"
+wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/najahiiii/debian/master/badvpn-udpgw64"
 sed -i '$ i\screen -AmdS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200' /etc/rc.local
 chmod +x /usr/bin/badvpn-udpgw
 screen -AmdS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200
@@ -182,7 +179,7 @@ cd
 
 # setting port ssh
 sed -i '/Port 22/a Port 143' /etc/ssh/sshd_config
-sed -i 's/Port 22/Port  22/g' /etc/ssh/sshd_config
+sed -i 's/Port 22/Port 22/g' /etc/ssh/sshd_config
 service ssh restart
 
 # install dropbear
