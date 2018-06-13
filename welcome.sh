@@ -13,8 +13,8 @@ IP=`dig +short myip.opendns.com @resolver1.opendns.com`
 	LRED=`echo "\033[0m\033[1;31m"`
 	BLUE=`echo "\033[0m\033[1;36m"`
 echo
-echo -e "${BLUE}----------- Hai Admin, Selamat datang di Server $IP -----------${NORMAL}"
-echo -e "Jika butuh bantuan & Pertanyaan hubungi kami di https://facebook.com/Najahiii"
+echo -e "${BLUE}       ----------- Hai Admin, Selamat datang di Server $IP -----------${NORMAL}"
+echo -e "             Jika butuh bantuan & Pertanyaan hubungi kami di https://facebook.com/Najahiii"
 echo -e "${NUMBER}---------- Silahkan ketik ${LRED}menu${NUMBER} untuk masuk ke Fitur Menu VPS ----------${NORMAL}"
-echo -e "${RED_TEXT}----------- Jangan Lupa Makan -----------${NORMAL}"
+echo -e "${RED_TEXT}                   ----------- Jangan Lupa Makan -----------${NORMAL}"
 echo ""
