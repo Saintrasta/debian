@@ -121,126 +121,130 @@ function used_data(){
 	read -p "Masukkan pilihan anda, kemudian tekan tombol ENTER: " option1
 	case $option1 in
         1)  
-          clear
-          buatakun.sh
-          ;;
+           clear
+           buatakun.sh
+           ;;
         2)  
-          clear
-          generate.sh
-          ;;
+           clear
+           generate.sh
+           ;;
         3)	
-          clear
-          trial.sh
-	  	  ;;	
+           clear
+           trial.sh
+	   ;;	
         4)
-          clear
-          userpass.sh
-          ;;
+           clear
+           userpass.sh
+           ;;
         5)
-          clear
-          userrenew.sh
-	      ;;
+           clear
+           userrenew.sh
+	   ;;
         6)
            clear
            userdelete.sh
-          ;;		
-	 	7)
-	   	   clear
-	   	   userlogin.sh
-	      ;;
-	 	8)
+           ;;		
+	7)
+	   clear
+	   userlogin.sh
+	   ;;
+	8)
            clear
-	       autolimit.sh
-	   	  ;;	
-	 	9)
-	       clear
+	   autolimit.sh
+	   ;;	
+	9)
+	   clear
            userdetail.sh
-          ;;
+           ;;
         10)
            clear
            user-list.sh
-          ;;
+           ;;
         11)
            clear
            deleteuserexpire.sh
-	      ;;
-		12)
-		   clear
-		   read -p "Isikan Maximal User Login (1-2): " MULTILOGIN
-		   echo "    AUTO KILL MULTI LOGIN    "    
-		   echo "-----------------------------"
-	           	autokilluser.sh  $MULTILOGIN
-		   		autokill.sh  $MULTILOGIN
-	       echo "-----------------------------"
-	       echo "AUTO KILL MULTI LOGIN SELESAI"
-	      ;;
+	   ;;
+	12)
+	   clear
+	   read -p "Isikan Maximal User Login (1-2): " MULTILOGIN
+	   echo "   AUTO KILL MULTI LOGIN    "    
+	   echo "----------------------------"
+	        autokilluser.sh  $MULTILOGIN
+		autokill.sh  $MULTILOGIN
+	   echo "----------------------------"
+	   echo "AUTO KILL MULTI LOGIN SELESAI"
+	   ;;
     	13)
        	   clear
            userban.sh
-	      ;;
-		14)
+	   ;;
+	14)
            clear
            userunban.sh
-	      ;;
+	   ;;
         15)
-	       clear
+	   clear
            userlock.sh
-	      ;;
+	   ;;
     	16)
        	   clear
            userunlock.sh
-	      ;;
-		17)
-	       clear
-	       loglimit.sh
-	      ;;
-		18)
+	   ;;
+	17)
+	   clear
+	   loglimit.sh
+	   ;;
+	18)
            clear
            logban.sh
-	      ;;
+	   ;;
     	19)
-	       clear
-	       userlogin.sh
+	   clear
+	   userlogin.sh
            echo "Contoh: 49.0.35.16 lalu Enter"
            read -p "Ketik Salah Satu Alamat IP User: " userip
            curl ipinfo.io/$userip
-         ;;
-		20)
-	       clear
+           ;;
+	20)
+	   clear
            autoreboot.sh
-         ;;
-		21)
-		   clear
-	        #!/bin/bash
-	        red='\e[1;31m'
-	        green='\e[0;32m'
-	        blue='\e[1;34m'
-	        NC='\e[0m'
-	        echo "Speed Tes Server"
-	        speedtest.py.sh
-          ;;
+           ;;
+        21)
+	   clear
+	   #!/bin/bash
+	   red='\e[1;31m'
+	   green='\e[0;32m'
+	   blue='\e[1;34m'
+	   NC='\e[0m'
+	   echo "Speed Tes Server"
+	   speedtest.py.sh
+           ;;
         22)
            clear
            ram.sh
-          ;;
+           ;;
         23)
-	  	   clear
-	  	   echo -e "1.) Simpan text (CTRL + X, lalu ketik Y dan tekan Enter) "  | tee -a log-install.txt
+	   clear
+	   echo -e "1.) Simpan text (CTRL + X, lalu ketik Y dan tekan Enter) "  | tee -a log-install.txt
            echo -e "2.) Membatalkan edit text (CTRL + X, lalu ketik N dan tekan Enter)"  | tee -a log-install.txt
            echo "-----------------------------------------------------------"  | tee -a log-install.txt
            read -p "Tekan ENTER untuk melanjutkan........................ "
            nano /bannerssh
            /etc/init.d/dropbear restart
-	  	  ;;
+	   ;;
         24)
            clear
            ubahport.sh
-	      ;;
+	  ;;
         25)
-	       clear
-	       reboot
+	   clear
+	   reboot
           ;;
         x)
+	  clear
+	  screenfetch-dev
           ;;
-        *) menu;;
+        *)
+	  menu
+	  ;;
         esac
